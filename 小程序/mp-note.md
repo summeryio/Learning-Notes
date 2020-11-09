@@ -42,4 +42,4 @@ https://github.com/lingxiaoyi/navigation-bar
 
 
 
-##### 使用catchtap组织子元素事件冒泡
+##### 使用catchtap阻止子元素事件冒泡
