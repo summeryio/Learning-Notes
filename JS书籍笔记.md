@@ -521,3 +521,39 @@ for (var i = 0; i < 10; i ++) {
 console.log(num); // 95
 ```
 
+
+
+##### switch()
+
+###### switch 语句在比较值时使用的是全等操作符
+
+
+
+
+
+------
+
+#### 函数 (81)
+
+##### 严格模式对函数有一些限制：
+
+1. 不能把函数命名为 eval 或 arguments；
+2. 不能把参数命名为 eval 或 arguments；
+3. 不能出现两个命名参数同名的情况。
+
+
+
+##### 理解参数
+
+###### 不显式地使用命名参数
+
+```
+function sayHi2() {
+  console.log('name: ' + arguments[0], 'age: ' + arguments[1]);
+}
+sayHi2('summer', 22) // 'name: summer age: 22'
+```
+
+###### arguments.length  获取传入参数的length
+
+66
