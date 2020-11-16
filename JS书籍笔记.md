@@ -438,3 +438,86 @@ for (; i < count; ) {
 }
 ```
 
+
+
+##### for-in
+
+在使用 for-in 循环之前，先检测确认该对象的值不是 null 或 undefined
+
+```
+var obj = {name: 'summer', age: 20, test: null}
+var animal = null
+
+if (obj) {
+    for (var key in obj) {
+    	console.log(obj[key]);
+    }
+}
+```
+
+
+
+##### break和continue语句
+
+###### break 会立即退出循环，强制继续执行循环后面的语句
+
+```
+var num = 0
+for (var i = 1; i < 10; i ++) {
+    if (i % 5 == 0) {
+    	break;
+    }
+    num++ // num = 4 时就退出循环了
+}
+console.log(num); // 4
+```
+
+
+
+###### continue  也是立即退出循环，但退出循环后会从循环的顶 部继续执行
+
+```
+var num = 0
+for (var i = 1; i < 10; i ++) {
+    if (i % 5 == 0) {
+        continue;
+    }
+    num++
+}
+console.log(num); // 8，continue导致少循环了一次
+```
+
+
+
+###### 使用 label 语句，与 break / continue 联用
+
+```
+var num = 0
+
+outermost:
+for (var i = 0; i < 10; i ++) {
+    for (var j = 0; j < 10; j ++) {
+        if (i == 5 && j == 5) {
+            break outermost // 返回到 outermost
+        }
+        num++
+    }
+}
+console.log(num); // 55
+```
+
+```
+var num = 0
+
+outermost:
+for (var i = 0; i < 10; i ++) {
+    for (var j = 0; j < 10; j ++) {
+        if (i == 5 && j == 5) {
+            continue outermost // 退出内部循环，执行外部循环
+        }
+        num++
+    }
+}
+console.log(num); // 95
+```
+
