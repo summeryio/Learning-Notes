@@ -556,4 +556,49 @@ sayHi2('summer', 22) // 'name: summer age: 22'
 
 ###### arguments.length  获取传入参数的length
 
-66
+###### 没有传递值的命名参数将自动被赋予 undefined 值
+
+
+
+###### 它的值永远与对应命名参数的值保持同步 （在严格模式下，会报错）
+
+```
+function doAdd(num1, num2) {
+  arguments[1] = 100
+  console.log(arguments[0] + num2);  // 10 + 100 = 110
+}
+doAdd(10, 20)
+```
+
+
+
+
+
+##### 没有重载
+
+###### 定义了两个名字相同的函数，则该名字只属于后定义的函数
+
+```
+function addSomeNumber(num) {
+  return num + 100
+}
+function addSomeNumber(num) {
+  return num + 300
+}
+console.log(addSomeNumber(1)); // 301
+```
+
+
+
+
+
+------
+
+#### 检测类型
+
+##### 检测基本数据类型
+
+##### typeof 操作符是确定一个变量是字符串、数值、布尔值，还是 undefined 的最佳工具。
+
+##### 如果变 量的值是一个对象或 null，则返回"object"
+
