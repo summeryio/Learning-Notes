@@ -79,3 +79,19 @@ export function convertTree(routers, menus) {
 }
 ```
 
+
+
+
+
+##### 类似下面的赋值方式可能会出现问题
+
+```
+this.formModel.signUrls = urlArr
+
+// 这样使用
+this.formModel = {
+                ...this.formModel,
+                envUrls: urlArr
+            }
+```
+
