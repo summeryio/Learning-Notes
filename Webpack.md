@@ -172,3 +172,36 @@ devServer: {
 
 
 ##### 运行 dev-server 的时候，它自身有新特性，低版本浏览器会报错。建议你用 http-server，直接访问你编译后的代码，可以在低版本浏览器验证兼容性。
+
+
+
+
+
+##### Tree Shaking
+
+https://segmentfault.com/a/1190000015689240
+
+只支持ES Module 的引入
+
+
+
+```
+// package.json
+// 为false 时，则对 import 的来源文件，没有export的会忽略掉
+"sideEffects": false,
+
+// 要忽略一些import的文件时
+"sideEffects": [*.css],
+
+```
+
+
+
+##### webpack 配置文件拆分
+
+###### webpack-merge
+
+```
+const {merge} = require('webpack-merge') // 使用解构
+```
+
