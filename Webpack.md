@@ -205,3 +205,21 @@ https://segmentfault.com/a/1190000015689240
 const {merge} = require('webpack-merge') // 使用解构
 ```
 
+
+
+##### Code Splitting
+
+###### 同步代码
+
+```
+// webpack.config
+optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
+```
+
+异步引入模块
+
+异步动态引入js模块，需要安装babel-plugin-dynamic-import-webpack --save，并且在.babelrc中配置"plugins": ["dynamic-import-webpack"]
