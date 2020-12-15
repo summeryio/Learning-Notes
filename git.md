@@ -1,3 +1,12 @@
+```
+// gist id
+8185d4a74a2f0f76b0c41d768dd3e777
+// access token
+f641f82e8dcace43139e8764fad5351e767ee75c
+```
+
+
+
 ##### Git branch使用
 
 ```
@@ -22,7 +31,7 @@ git push -u origin master
 
 ```
 git fetch origin dev
-git checkout -b 本地分支名 origin/远程分支名
+git checkout -b dev origin/dev
 ```
 
 
@@ -45,3 +54,14 @@ git branch -d fix
 git push origin :fix
 ```
 
+
+
+##### git add commit 撤销操作
+
+https://blog.csdn.net/kongbaidepao/article/details/52253774
+
+
+
+##### git pull --rebase
+
+https://www.cnblogs.com/fnlingnzb-learner/p/10592855.html
