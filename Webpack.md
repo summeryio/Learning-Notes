@@ -223,3 +223,57 @@ optimization: {
 异步引入模块
 
 异步动态引入js模块，需要安装babel-plugin-dynamic-import-webpack --save，并且在.babelrc中配置"plugins": ["dynamic-import-webpack"]
+
+
+
+##### SplitChunksPlugin 配置参数
+
+https://coding.imooc.com/lesson/316.html#mid=22364
+
+
+
+###### webpack4.X修改SplitChunksPlugin.vendors.filename报错，解决：注释掉filename
+
+https://segmentfault.com/a/1190000023050468
+
+
+
+##### 打包分析
+
+https://github.com/webpack-contrib/webpack-bundle-analyzer
+
+
+
+##### 使用webpackPrefetch预加载模块（即在页面加载完成，再去加载交互js）
+
+```
+document.addEventListener('click', () => {
+  import(/* webpackPrefetch: true */ './click.js').then(({default: fn}) => {
+    fn()
+  })
+})
+```
+
+
+
+##### webpack.config -> output 设置 chunkFilename
+
+```
+output: {
+    chunkFilename: '[name].chunk.js' // 异步引入模块时的文件名
+  }
+```
+
+
+
+##### CSS文件的代码分割
+
+###### 要注意原先配置的tree shaking，需要去设置sideEffects
+
+```
+// package.json
+"sideEffects": [
+    "*.css"
+  ]
+```
+
