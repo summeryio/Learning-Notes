@@ -277,3 +277,36 @@ output: {
   ]
 ```
 
+
+
+##### 关闭terminal 性能的 warning
+
+```
+webpack.config.js
+performance: false,
+```
+
+
+
+
+
+##### Webpack 与浏览器缓存(Caching)
+
+###### 打包的文件作用
+
+```
+main.hash.js // 业务代码
+vendor.hash.js // 引入模块代码
+```
+
+###### 将js打包文件之间的关联代码抽离出来
+
+旧版的webpack，不加这个，会导致每次打包，hash值都不一样
+
+```
+// webpack.common.js
+runtimeChunk: {
+      name: 'runtime'
+    },
+```
+
