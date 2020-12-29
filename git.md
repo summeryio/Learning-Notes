@@ -41,6 +41,9 @@ git checkout -b dev origin/dev
 ```
 git checkout -b feature-branch    //创建并切换到分支feature-branch  
 git push origin feature-branch:feature-branch    //推送本地的feature-branch(冒号前面的)分支到远程origin的feature-branch(冒号后面的)分支(没有会自动创建)
+
+// 本地新建的分支推到远程(远程分支没有的情况下)
+git push --set-upstream origin fix-course
 ```
 
 https://www.cnblogs.com/qyf404/p/git_push_local_branch_to_remote.html
